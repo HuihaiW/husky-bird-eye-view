@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/uil/husky_catkin/devel/.private/bird_eye_view/setup.sh

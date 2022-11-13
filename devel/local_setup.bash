@@ -1,0 +1,1 @@
+/home/uil/husky_catkin/devel/.private/catkin_tools_prebuild/local_setup.bash

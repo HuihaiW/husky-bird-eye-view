@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target pointCloudCppCV[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/uil/husky_catkin/devel/.private/bird_eye_view/lib/bird_eye_view/pointCloudCppCV[0m
+[100%] Built target pointCloudCppCV

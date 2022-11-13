@@ -1,0 +1,8 @@
+prefix=/home/uil/husky_catkin/devel/.private/bird_eye_view
+
+Name: bird_eye_view
+Description: Description of bird_eye_view
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

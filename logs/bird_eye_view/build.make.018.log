@@ -1,0 +1,5 @@
+[ 50%] [32m[1mLinking CXX executable /home/uil/husky_catkin/devel/.private/bird_eye_view/lib/bird_eye_view/pointCloudCppCV[0m
+/usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0, may conflict with libopencv_imgcodecs.so.406
+/usr/bin/ld: warning: libopencv_imgproc.so.406, needed by /usr/local/lib/libopencv_imgcodecs.so.4.6.0, may conflict with libopencv_imgproc.so.4.2
+/usr/bin/ld: warning: libopencv_core.so.406, needed by /usr/local/lib/libopencv_imgcodecs.so.4.6.0, may conflict with libopencv_core.so.4.2
+[100%] Built target pointCloudCppCV

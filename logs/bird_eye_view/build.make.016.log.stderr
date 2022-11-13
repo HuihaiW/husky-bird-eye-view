@@ -1,0 +1,10 @@
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:36:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kconst[m[K’
+   36 |     [01;31m[Kconst[m[K uint32_t device_count = k4a::device::get_installed_count();
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:37:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kdevice_count[m[K’ was not declared in this scope
+   37 |     if([01;31m[Kdevice_count[m[K == 0){
+      |        [01;31m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/pointCloudCppCV.dir/build.make:63: CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1648: CMakeFiles/pointCloudCppCV.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

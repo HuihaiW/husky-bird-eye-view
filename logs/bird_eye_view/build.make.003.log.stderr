@@ -1,0 +1,36 @@
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:117:12:[m[K [01;31m[Kerror: [m[K‘[01m[KVector6d[m[K’ was not declared in this scope
+  117 |     vector<[01;31m[KVector6d[m[K, Eigen::aligned_allocator<Vector6d>> pointcloud;
+      |            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:117:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  117 |     vector<Vector6d, Eigen::aligned_allocator<Vector6d[01;31m[K>>[m[K pointcloud;
+      |                                                       [01;31m[K^~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:117:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:298:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kgenerated_image_low[m[K’ was not declared in this scope; did you mean ‘[01m[Kgenerated_image_high[m[K’?
+  298 |       [01;31m[Kgenerated_image_low[m[K.at<Vec3b>(i_y, i_x)[0] = r;
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |       [32m[Kgenerated_image_high[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:298:35:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  298 |       generated_image_low.at<Vec3b[01;31m[K>[m[K(i_y, i_x)[0] = r;
+      |                                   [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:298:48:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kint[int][m[K’ for array subscript
+  298 |       generated_image_low.at<Vec3b>(i_y, i_x)[0[01;31m[K][m[K = r;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:299:35:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  299 |       generated_image_low.at<Vec3b[01;31m[K>[m[K(i_y, i_x)[1] = g;
+      |                                   [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:299:48:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kint[int][m[K’ for array subscript
+  299 |       generated_image_low.at<Vec3b>(i_y, i_x)[1[01;31m[K][m[K = g;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:300:35:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  300 |       generated_image_low.at<Vec3b[01;31m[K>[m[K(i_y, i_x)[2] = b;
+      |                                   [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:300:48:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kint[int][m[K’ for array subscript
+  300 |       generated_image_low.at<Vec3b>(i_y, i_x)[2[01;31m[K][m[K = b;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:338:17:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kclear[m[K’ in ‘[01m[Kpointcloud[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  338 |      pointcloud.[01;31m[Kclear[m[K();
+      |                 [01;31m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/pointCloudCppCV.dir/build.make:63: CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1648: CMakeFiles/pointCloudCppCV.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

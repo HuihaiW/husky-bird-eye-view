@@ -1,0 +1,6 @@
+devel_space: /home/uil/husky_catkin/devel
+install: false
+install_space: /home/uil/husky_catkin/install
+profile: default
+source_space: /home/uil/husky_catkin/src
+workspace: /home/uil/husky_catkin
