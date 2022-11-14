@@ -1,9 +1,0 @@
-[35m[1mScanning dependencies of target pointCloudCppCV[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o[0m
-[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:[m[K In function ‘[01m[Kvoid get_pose(const ConstPtr&)[m[K’:
-[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:28:24:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Kconst _transforms_type[m[K’ {aka ‘[01m[Kconst std::vector<geometry_msgs::TransformStamped_<std::allocator<void> >, std::allocator<geometry_msgs::TransformStamped_<std::allocator<void> > > >[m[K’}
-   28 |     x = msg->transforms[01;31m[K->[m[Ktransform.translation.x;
-      |                        [01;31m[K^~[m[K
-make[2]: *** [CMakeFiles/pointCloudCppCV.dir/build.make:63: CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:1648: CMakeFiles/pointCloudCppCV.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2

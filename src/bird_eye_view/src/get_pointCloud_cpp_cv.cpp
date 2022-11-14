@@ -117,6 +117,15 @@ int main(int argc, char** argv){
     cv::Mat cv_irImage_8U;
     cv::Mat cv_location;
     cv::Mat cv_rgb;
+    
+    Mat generated_image_high(400, 400, CV_8UC3, Scalar(0,0,0));
+    Mat height_high(400, 400, CV_64FC1, Scalar(0));
+
+    Mat mm2m;
+    mm2m = Mat::zeros(3, 3, CV_64FC1);
+    mm2m.at<double>(0,0) = 0.001;
+    mm2m.at<double>(1,1) = -0.001;
+    mm2m.at<double>(2,2) = -0.001;
 
     start = clock();
     k4a::calibration k4aCalibration = device.get_calibration(config.depth_mode, config.color_resolution);
@@ -144,12 +153,12 @@ int main(int argc, char** argv){
 
     Matrix3d Homography, intrinsic_rotate, temp_matrix, rotation_matrix;
     
-    //Homography << 0.000139809, -0.000187151, 0.815971, -1.88624e-06, -3.60233e-05, 0.578092, -3.35392e-08, -2.5564e-07, 0.00120086;
+    Homography << 0.000139809, -0.000187151, 0.815971, -1.88624e-06, -3.60233e-05, 0.578092, -3.35392e-08, -2.5564e-07, 0.00120086;
     //Homography << 0.000540608, -0.000543355, 0.736318, 1.08167e-05, -0.000132894, 0.676634, 2.55567e-08, -8.55258e-07, 0.00114261;
     //Homography <<  0.000530757, -0.000537706, 0.706097, 4.45295e-05, -0.000209662, 0.708113,  8.27766e-08, -8.7597e-07, 0.00119099;
 
     //Homography <<  0.000577036,-0.000556275,0.701894, 7.53814e-05,-0.000200309,0.71228, 1.11737e-07,-8.80059e-07,0.00108064;
-    Homography <<  0.000724782, -0.000644843, 0.705882, 7.69309e-05,-0.000192769, 0.708329, 1.23824e-07,-1.02981e-06, 0.00112925;
+    //Homography <<  0.000724782, -0.000644843, 0.705882, 7.69309e-05,-0.000192769, 0.708329, 1.23824e-07,-1.02981e-06, 0.00112925;
 
     intrinsic_rotate << 606.782, 0.0,  643.805,
 		     	0.0, 606.896,  366.084,
@@ -188,26 +197,16 @@ int main(int argc, char** argv){
     translation = rotation_matrix.inverse()*translation;
     cout << "translation: " << translation.transpose() << endl;
     cout << "inversed rotation matrix: " << rotation_matrix.inverse() << endl;
-    Mat cv_Rotation(3, 4, CV_64FC1);
+    Mat cv_Rotation(3, 3, CV_64FC1);
     for(int i=0; i<3; i++){
-	for(int j=0; j<4; j++){
-	    if(j==3){
-		cv_Rotation.at<double>(i,j)= -1 * translation(i,0);
-	    }
-	    else{
-		double rotation_value = 0;
-		rotation_value = rotation_matrix.inverse()(i, j);
-	        cv_Rotation.at<double>(i,j)=rotation_value;
-	    }
+	for(int j=0; j<3; j++){
+	    double rotation_value = 0;
+	    rotation_value = rotation_matrix.inverse()(i, j);
+	    cv_Rotation.at<double>(i,j)=rotation_value;
 	}
     }
 
-    for (int i=0; i<cv_Rotation.rows; i++){
-	cout << "-------------"<<endl;
-	for(int j=0; j<cv_Rotation.cols; j++){
-	    cout << cv_Rotation.at<double>(i,j)<<endl;
-	}
-    }
+
 
     while (ros::ok()){
 	Quaterniond q;
@@ -216,6 +215,16 @@ int main(int argc, char** argv){
 	q.z() = r_z;
 	q.w() = r_w;
 	Matrix3d rotation_robot = q.normalized().toRotationMatrix().inverse();
+        Mat Robot_R(3, 4, CV_64FC1);
+
+	for(int i=0; i<3; i++){
+	    for(int j=0; j<3; j++){
+		Robot_R.at<double>(i,j) = rotation_robot(i,j);
+            }
+	}
+	Robot_R.at<double>(0, 3) = x;
+	Robot_R.at<double>(1, 3) = y;
+	Robot_R.at<double>(2, 3) = z;
 
 	
 	cout << "Loop: " << index++ << endl;
@@ -284,50 +293,48 @@ int main(int argc, char** argv){
 	    cv_location = cv_location.reshape(1, xyzImage.get_height_pixels()*xyzImage.get_width_pixels() );
 	    cv_rgb = cv_rgbImage_no_alpha.reshape(1, cv_rgbImage_no_alpha.rows*cv_rgbImage_no_alpha.cols);
 
-	    Mat col_ones = Mat::ones(pointcount, 1, CV_16SC1);
-	    hconcat(cv_location, col_ones, cv_location);
+	    //Mat col_ones = Mat::ones(pointcount, 1, CV_16SC1);
+	    //hconcat(cv_location, col_ones, cv_location);
 
 	    cv_location = cv_location.t();
 	    cv_rgb = cv_rgb.t();
 
 	    cv_location.convertTo(cv_location,CV_64FC1);
 
-	    cv_location = (cv_Rotation * cv_location)/translation(2, 0);
+	    cv_location = mm2m *  (cv_Rotation * cv_location);
 	    Mat row_ones = Mat::ones(1, pointcount, CV_64FC1);
 	    cv_location.push_back(row_ones);
-	    cv_location = cv_K * cv_location;
+	    //cv_location = cv_K * cv_location;
+	    cv_location = Robot_R * cv_location;
 	    
 
-    	    //Mat generated_image_low(180, 360, CV_8UC3, Scalar(0,0,0));
-    	    Mat generated_image_high(360, 720, CV_8UC3, Scalar(0,0,0));
-    	    //Mat resized_image_high(360, 720, CV_8UC3, Scalar(0,0,0));
-	    //Mat mask(360, 720, CV_8UC1, Scalar(0));
-	    Mat height_high(360, 720, CV_64FC1, Scalar(0));
-	    Mat height_low(180, 360, CV_64FC1, Scalar(0));
-
 	    
-	    
+	    cout << "start get new image" << endl;
 	    for(size_t i=0; i<pointcount; i++){
 
-		double x = cv_location.at<double>(0, i);
-		double y = cv_location.at<double>(1, i);
-		double z = -1.0 * cv_location.at<double>(3, i);
+		double x = cv_location.at<double>(0, i)/0.05;
+		double y = cv_location.at<double>(1, i)/0.05;
+		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
 		int g = cv_rgb.at<uchar>(1, i);
 		int b = cv_rgb.at<uchar>(2, i);
 		
-		if(x>1440) continue;
+
+		if(x>400) continue;
 		if(x<0) continue;
-		if(y>720)continue;
+		if(y>400)continue;
 		if(y<0)continue;
 
-		double scale_image = 4.0;
 
+		//cout << "x and y is: " << x <<  ", " << y << endl; 
+		double scale_image = 1.0;
+
+		/*
 		int i_x = static_cast<int>(x/scale_image);
 		int i_y = static_cast<int>(y/scale_image);
 
-		/*
+		
 		if(z > height_low.at<double>(i_y, i_x)){
 		    generated_image_low.at<Vec3b>(i_y, i_x)[0] = r;
 		    generated_image_low.at<Vec3b>(i_y, i_x)[1] = g;
@@ -336,16 +343,14 @@ int main(int argc, char** argv){
 		}
 		*/
 		
-                scale_image = 2.0;
-		i_x = static_cast<int>(x/scale_image);
-		i_y = static_cast<int>(y/scale_image);
-		if(z > height_high.at<double>(i_y, i_x)){
+                scale_image = 1.0;
+		int i_x = static_cast<int>(x/scale_image);
+		int i_y = static_cast<int>(y/scale_image);
 		    generated_image_high.at<Vec3b>(i_y, i_x)[0] = r;
 		    generated_image_high.at<Vec3b>(i_y, i_x)[1] = g;
 		    generated_image_high.at<Vec3b>(i_y, i_x)[2] = b;
 		    height_high.at<double>(i_y, i_x) = z;
 		    //mask.at<uchar>(i_y,i_x)=255;
-		}
 
 
 	    }
@@ -357,6 +362,8 @@ int main(int argc, char** argv){
 
 	    //imshow("generated_low", generated_image_low);
 	    //imshow("resized_high", resized_image_high);
+
+	    cout << "finished the first image" << endl;
 	    imshow("generated_high", generated_image_high);
 
 

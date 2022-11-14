@@ -1,0 +1,8 @@
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:122:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kzeros[m[K’ was not declared in this scope; did you mean ‘[01m[Kros[m[K’?
+  122 |     mm2m = [01;31m[Kzeros[m[K(3, 3, CV_64FC1);
+      |            [01;31m[K^~~~~[m[K
+      |            [32m[Kros[m[K
+make[2]: *** [CMakeFiles/pointCloudCppCV.dir/build.make:63: CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1648: CMakeFiles/pointCloudCppCV.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
