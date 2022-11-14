@@ -30,13 +30,17 @@ float r_z;
 float r_w;
 
 void get_pose(const tf2_msgs::TFMessage::ConstPtr& msg){
-    
-    x = msg->transforms[0].transform.translation.x;
-    y = msg->transforms[0].transform.translation.y;
-    r_x = msg->transforms[0].transform.rotation.x;
-    r_y = msg->transforms[0].transform.rotation.y;
-    r_z = msg->transforms[0].transform.rotation.z;
-    r_w = msg->transforms[0].transform.rotation.w;
+
+    string child_frame;
+    child_frame = msg->transforms[0].child_frame_id;
+    if(child_frame == "base_link"){
+        x = msg->transforms[0].transform.translation.x;
+        y = msg->transforms[0].transform.translation.y;
+        r_x = msg->transforms[0].transform.rotation.x;
+        r_y = msg->transforms[0].transform.rotation.y;
+        r_z = msg->transforms[0].transform.rotation.z;
+        r_w = msg->transforms[0].transform.rotation.w;
+    }
    
 }
 
@@ -118,14 +122,16 @@ int main(int argc, char** argv){
     cv::Mat cv_location;
     cv::Mat cv_rgb;
     
-    //Mat generated_image_high(400, 400, CV_8UC3, Scalar(0,0,0));
-    //Mat height_high(400, 400, CV_64FC1, Scalar(0));
+    Mat generated_image_high(800, 800, CV_8UC3, Scalar(0,0,0));
+    Mat height_high(800, 800, CV_64FC1, Scalar(0));
 
     Mat mm2m;
-    mm2m = Mat::zeros(3, 3, CV_64FC1);
+    mm2m = Mat::zeros(3, 4, CV_64FC1);
     mm2m.at<double>(0,0) = 0.001;
     mm2m.at<double>(1,1) = -0.001;
     mm2m.at<double>(2,2) = -0.001;
+    mm2m.at<double>(1,3) = 0.37;
+
 
     start = clock();
     k4a::calibration k4aCalibration = device.get_calibration(config.depth_mode, config.color_resolution);
@@ -216,15 +222,18 @@ int main(int argc, char** argv){
 	q.w() = r_w;
 	Matrix3d rotation_robot = q.normalized().toRotationMatrix();
         Mat Robot_R(3, 4, CV_64FC1);
+	Matrix<double, 3, 1> Robot_T;
+	Robot_T << x, y, z;
+	//Robot_T = rotation_robot*Robot_T;
 
 	for(int i=0; i<3; i++){
 	    for(int j=0; j<3; j++){
 		Robot_R.at<double>(i,j) = rotation_robot(i,j);
             }
 	}
-	Robot_R.at<double>(0, 3) =  x;
-	Robot_R.at<double>(1, 3) =  y;
-	Robot_R.at<double>(2, 3) =  z;
+	Robot_R.at<double>(0, 3) =  -1 * Robot_T(0, 0);
+	Robot_R.at<double>(1, 3) =  -1 * Robot_T(1, 0);
+	Robot_R.at<double>(2, 3) =  -1 * Robot_T(2, 0);
 
 	
 	cout << "Loop: " << index++ << endl;
@@ -300,22 +309,26 @@ int main(int argc, char** argv){
 	    cv_rgb = cv_rgb.t();
 
 	    cv_location.convertTo(cv_location,CV_64FC1);
-
-	    cv_location = mm2m *  (cv_Rotation * cv_location);
+	    cv_location = cv_Rotation * cv_location;
 	    Mat row_ones = Mat::ones(1, pointcount, CV_64FC1);
+            cv_location.push_back(row_ones);
+
+
+	    cv_location = mm2m * cv_location;
+	    row_ones = Mat::ones(1, pointcount, CV_64FC1);
 	    cv_location.push_back(row_ones);
 	    //cv_location = cv_K * cv_location;
 	    cv_location = Robot_R * cv_location;
 	    
 
 	    
-            Mat generated_image_high(800, 800, CV_8UC3, Scalar(0,0,0));
-    	    Mat height_high(800, 800, CV_64FC1, Scalar(0));
+            Mat generated_image_high_temp(800, 800, CV_8UC3, Scalar(0,0,0));
+    	    //Mat height_high(800, 800, CV_64FC1, Scalar(0));
 	    cout << "start get new image" << endl;
 	    for(size_t i=0; i<pointcount; i++){
 
 		double x = 400 + cv_location.at<double>(0, i)/0.05;
-		double y = 400 + 400 - cv_location.at<double>(1, i)/0.05;
+		double y = 800 - (400 + cv_location.at<double>(1, i)/0.05);
 		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
@@ -353,6 +366,9 @@ int main(int argc, char** argv){
 		    generated_image_high.at<Vec3b>(i_y, i_x)[2] = b;
 		    height_high.at<double>(i_y, i_x) = z;
 		    //mask.at<uchar>(i_y,i_x)=255;
+		    generated_image_high_temp.at<Vec3b>(i_y, i_x)[0] = r;
+		    generated_image_high_temp.at<Vec3b>(i_y, i_x)[1] = g;
+		    generated_image_high_temp.at<Vec3b>(i_y, i_x)[2] = b;
 
 
 	    }
@@ -367,6 +383,7 @@ int main(int argc, char** argv){
 
 	    cout << "finished the first image" << endl;
 	    imshow("generated_high", generated_image_high);
+	    imshow("generated_high_temp", generated_image_high_temp);
 
 
 	    capture.reset();

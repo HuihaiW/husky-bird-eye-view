@@ -1,0 +1,686 @@
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:26:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand types are ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} and ‘[01m[Kcv::Mat[m[K’)
+  224 |  Robot_T = [32m[Krotation_robot[m[K[01;31m[K*[m[K[34m[KRobot_T[m[K;
+      |            [32m[K~~~~~~~~~~~~~~[m[K[01;31m[K^[m[K[34m[K~~~~~~~[m[K
+      |            [32m[K|[m[K              [34m[K|[m[K
+      |            [32m[K|[m[K              [34m[Kcv::Mat[m[K
+      |            [32m[KEigen::Matrix3d {aka Eigen::Matrix<double, 3, 3>}[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:88[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:29:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> typename Eigen::internal::enable_if<true, const Eigen::CwiseBinaryOp<Eigen::internal::scalar_product_op<typename Eigen::internal::traits<T>::Scalar, typename Eigen::internal::promote_scalar_arg<typename Eigen::internal::traits<T>::Scalar, T, Eigen::internal::has_ReturnType<Eigen::ScalarBinaryOpTraits<typename Eigen::internal::traits<T>::Scalar, T, Eigen::internal::scalar_product_op<typename Eigen::internal::traits<T>::Scalar, T> > >::value>::type>, const Derived, const typename Eigen::internal::plain_constant_type<Derived, typename Eigen::internal::promote_scalar_arg<typename Eigen::internal::traits<T>::Scalar, T, Eigen::internal::has_ReturnType<Eigen::ScalarBinaryOpTraits<typename Eigen::internal::traits<T>::Scalar, T, Eigen::internal::scalar_product_op<typename Eigen::internal::traits<T>::Scalar, T> > >::value>::type>::type> >::type Eigen::MatrixBase<Derived>::operator*(const T&) const [with T = T; Derived = Eigen::Matrix<double, 3, 3>][m[K’
+   50 | EIGEN_MAKE_SCALAR_BINARY_OP([01;36m[Koperator[m[K*,product)
+      |                             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/Macros.h:981:4:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP_ONTHERIGHT[m[K’
+  981 |   ([01;36m[KMETHOD[m[K)(const T& scalar) const { \
+      |    [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K’
+   50 | [01;36m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K(operator*,product)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:29:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+   50 | EIGEN_MAKE_SCALAR_BINARY_OP([01;36m[Koperator[m[K*,product)
+      |                             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/Macros.h:981:4:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP_ONTHERIGHT[m[K’
+  981 |   ([01;36m[KMETHOD[m[K)(const T& scalar) const { \
+      |    [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K’
+   50 | [01;36m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K(operator*,product)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h: In substitution of ‘[01m[Ktemplate<class T> typename Eigen::internal::enable_if<true, const Eigen::CwiseBinaryOp<Eigen::internal::scalar_product_op<double, typename Eigen::internal::promote_scalar_arg<double, T, Eigen::internal::has_ReturnType<Eigen::ScalarBinaryOpTraits<double, T, Eigen::internal::scalar_product_op<double, T> > >::value>::type>, const Eigen::Matrix<double, 3, 3>, const typename Eigen::internal::plain_constant_type<Eigen::Matrix<double, 3, 3>, typename Eigen::internal::promote_scalar_arg<double, T, Eigen::internal::has_ReturnType<Eigen::ScalarBinaryOpTraits<double, T, Eigen::internal::scalar_product_op<double, T> > >::value>::type>::type> >::type Eigen::MatrixBase<Eigen::Matrix<double, 3, 3> >::operator*<T>(const T&) const [with T = cv::Mat][m[K’:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:29:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct Eigen::internal::promote_scalar_arg<double, cv::Mat, false>[m[K’
+   50 | EIGEN_MAKE_SCALAR_BINARY_OP([01;31m[Koperator[m[K*,product)
+      |                             [01;31m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/Macros.h:981:4:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP_ONTHERIGHT[m[K’
+  981 |   ([01;36m[KMETHOD[m[K)(const T& scalar) const { \
+      |    [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K’
+   50 | [01;36m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K(operator*,product)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:436[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:166:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class OtherDerived> const Eigen::Product<Derived, OtherDerived> Eigen::MatrixBase<Derived>::operator*(const Eigen::MatrixBase<OtherDerived>&) const [with OtherDerived = OtherDerived; Derived = Eigen::Matrix<double, 3, 3>][m[K’
+  166 |     [01;36m[Koperator[m[K*(const MatrixBase<OtherDerived> &other) const;
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:166:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst Eigen::MatrixBase<Derived>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:436[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:185:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class DiagonalDerived> const Eigen::Product<Derived, OtherDerived, 1> Eigen::MatrixBase<Derived>::operator*(const Eigen::DiagonalBase<DiagonalDerived>&) const [with DiagonalDerived = DiagonalDerived; Derived = Eigen::Matrix<double, 3, 3>][m[K’
+  185 |     [01;36m[Koperator[m[K*(const DiagonalBase<DiagonalDerived> &diagonal) const;
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:185:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst Eigen::DiagonalBase<T>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core/cvstd.inl.hpp:47[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core.hpp:3292[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/c++/9/complex:391:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const std::complex<_Tp>&)[m[K’
+  391 |     [01;36m[Koperator[m[K*(const complex<_Tp>& __x, const complex<_Tp>& __y)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/complex:391:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core/cvstd.inl.hpp:47[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core.hpp:3292[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/c++/9/complex:400:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const _Tp&)[m[K’
+  400 |     [01;36m[Koperator[m[K*(const complex<_Tp>& __x, const _Tp& __y)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/complex:400:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core/cvstd.inl.hpp:47[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core.hpp:3292[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/c++/9/complex:409:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const _Tp&, const std::complex<_Tp>&)[m[K’
+  409 |     [01;36m[Koperator[m[K*(const _Tp& __x, const complex<_Tp>& __y)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/complex:409:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1237:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Matx<_Tp, m, n> cv::operator*(const cv::Matx<_Tp, m, n>&, int)[m[K’
+ 1237 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (const Matx<_Tp, m, n>& a, int alpha)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1237:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1243:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Matx<_Tp, m, n> cv::operator*(const cv::Matx<_Tp, m, n>&, float)[m[K’
+ 1243 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (const Matx<_Tp, m, n>& a, float alpha)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1243:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1249:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Matx<_Tp, m, n> cv::operator*(const cv::Matx<_Tp, m, n>&, double)[m[K’
+ 1249 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (const Matx<_Tp, m, n>& a, double alpha)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1249:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1255:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Matx<_Tp, m, n> cv::operator*(int, const cv::Matx<_Tp, m, n>&)[m[K’
+ 1255 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (int alpha, const Matx<_Tp, m, n>& a)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1255:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1261:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Matx<_Tp, m, n> cv::operator*(float, const cv::Matx<_Tp, m, n>&)[m[K’
+ 1261 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (float alpha, const Matx<_Tp, m, n>& a)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1261:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1267:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Matx<_Tp, m, n> cv::operator*(double, const cv::Matx<_Tp, m, n>&)[m[K’
+ 1267 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (double alpha, const Matx<_Tp, m, n>& a)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1267:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1279:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n, int l> cv::Matx<_Tp, m, n> cv::operator*(const cv::Matx<_Tp, m, l>&, const cv::Matx<_Tp, l, n>&)[m[K’
+ 1279 | Matx<_Tp, m, n> [01;36m[Koperator[m[K * (const Matx<_Tp, m, l>& a, const Matx<_Tp, l, n>& b)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1279:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, l>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1285:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Vec<_Tp, m> cv::operator*(const cv::Matx<_Tp, m, n>&, const cv::Vec<_Tp, n>&)[m[K’
+ 1285 | Vec<_Tp, m> [01;36m[Koperator[m[K * (const Matx<_Tp, m, n>& a, const Vec<_Tp, n>& b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1285:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1392:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int cn> cv::Vec<_Tp, m> cv::operator*(const cv::Vec<_Tp, m>&, int)[m[K’
+ 1392 | Vec<_Tp, cn> [01;36m[Koperator[m[K * (const Vec<_Tp, cn>& a, int alpha)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1392:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1398:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int cn> cv::Vec<_Tp, m> cv::operator*(int, const cv::Vec<_Tp, m>&)[m[K’
+ 1398 | Vec<_Tp, cn> [01;36m[Koperator[m[K * (int alpha, const Vec<_Tp, cn>& a)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1398:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1404:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int cn> cv::Vec<_Tp, m> cv::operator*(const cv::Vec<_Tp, m>&, float)[m[K’
+ 1404 | Vec<_Tp, cn> [01;36m[Koperator[m[K * (const Vec<_Tp, cn>& a, float alpha)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1404:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1410:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int cn> cv::Vec<_Tp, m> cv::operator*(float, const cv::Vec<_Tp, m>&)[m[K’
+ 1410 | Vec<_Tp, cn> [01;36m[Koperator[m[K * (float alpha, const Vec<_Tp, cn>& a)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1410:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1416:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int cn> cv::Vec<_Tp, m> cv::operator*(const cv::Vec<_Tp, m>&, double)[m[K’
+ 1416 | Vec<_Tp, cn> [01;36m[Koperator[m[K * (const Vec<_Tp, cn>& a, double alpha)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1416:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1422:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int cn> cv::Vec<_Tp, m> cv::operator*(double, const cv::Vec<_Tp, m>&)[m[K’
+ 1422 | Vec<_Tp, cn> [01;36m[Koperator[m[K * (double alpha, const Vec<_Tp, cn>& a)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1422:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1453:43:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Vec<_Tp, 4> cv::operator*(const cv::Vec<_Tp, 4>&, const cv::Vec<_Tp, 4>&)[m[K’
+ 1453 | template<typename _Tp> inline Vec<_Tp, 4> [01;36m[Koperator[m[K * (const Vec<_Tp, 4>& v1, const Vec<_Tp, 4>& v2)
+      |                                           [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/matx.hpp:1453:43:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Vec<_Tp, 4>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1057:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Complex<_Tp> cv::operator*(const cv::Complex<_Tp>&, const cv::Complex<_Tp>&)[m[K’
+ 1057 | Complex<_Tp> [01;36m[Koperator[m[K * (const Complex<_Tp>& a, const Complex<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1057:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Complex<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1063:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Complex<_Tp> cv::operator*(const cv::Complex<_Tp>&, _Tp)[m[K’
+ 1063 | Complex<_Tp> [01;36m[Koperator[m[K * (const Complex<_Tp>& a, _Tp b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1063:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Complex<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1069:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Complex<_Tp> cv::operator*(_Tp, const cv::Complex<_Tp>&)[m[K’
+ 1069 | Complex<_Tp> [01;36m[Koperator[m[K * (_Tp b, const Complex<_Tp>& a)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1069:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Complex<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1335:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(const cv::Point_<_Tp>&, int)[m[K’
+ 1335 | Point_<_Tp> [01;36m[Koperator[m[K * (const Point_<_Tp>& a, int b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1335:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1341:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(int, const cv::Point_<_Tp>&)[m[K’
+ 1341 | Point_<_Tp> [01;36m[Koperator[m[K * (int a, const Point_<_Tp>& b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1341:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1347:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(const cv::Point_<_Tp>&, float)[m[K’
+ 1347 | Point_<_Tp> [01;36m[Koperator[m[K * (const Point_<_Tp>& a, float b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1347:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1353:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(float, const cv::Point_<_Tp>&)[m[K’
+ 1353 | Point_<_Tp> [01;36m[Koperator[m[K * (float a, const Point_<_Tp>& b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1353:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1359:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(const cv::Point_<_Tp>&, double)[m[K’
+ 1359 | Point_<_Tp> [01;36m[Koperator[m[K * (const Point_<_Tp>& a, double b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1359:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1365:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(double, const cv::Point_<_Tp>&)[m[K’
+ 1365 | Point_<_Tp> [01;36m[Koperator[m[K * (double a, const Point_<_Tp>& b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1365:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1371:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point_<_Tp> cv::operator*(const cv::Matx<_Tp, 2, 2>&, const cv::Point_<_Tp>&)[m[K’
+ 1371 | Point_<_Tp> [01;36m[Koperator[m[K * (const Matx<_Tp, 2, 2>& a, const Point_<_Tp>& b)
+      |             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1371:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, 2, 2>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1378:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(const cv::Matx<_Tp, 3, 3>&, const cv::Point_<_Tp>&)[m[K’
+ 1378 | Point3_<_Tp> [01;36m[Koperator[m[K * (const Matx<_Tp, 3, 3>& a, const Point_<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1378:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, 3, 3>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1604:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(const cv::Point3_<_Tp>&, int)[m[K’
+ 1604 | Point3_<_Tp> [01;36m[Koperator[m[K * (const Point3_<_Tp>& a, int b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1604:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1610:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(int, const cv::Point3_<_Tp>&)[m[K’
+ 1610 | Point3_<_Tp> [01;36m[Koperator[m[K * (int a, const Point3_<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1610:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1616:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(const cv::Point3_<_Tp>&, float)[m[K’
+ 1616 | Point3_<_Tp> [01;36m[Koperator[m[K * (const Point3_<_Tp>& a, float b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1616:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1622:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(float, const cv::Point3_<_Tp>&)[m[K’
+ 1622 | Point3_<_Tp> [01;36m[Koperator[m[K * (float a, const Point3_<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1622:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1628:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(const cv::Point3_<_Tp>&, double)[m[K’
+ 1628 | Point3_<_Tp> [01;36m[Koperator[m[K * (const Point3_<_Tp>& a, double b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1628:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1634:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(double, const cv::Point3_<_Tp>&)[m[K’
+ 1634 | Point3_<_Tp> [01;36m[Koperator[m[K * (double a, const Point3_<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1634:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1640:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Point3_<_Tp> cv::operator*(const cv::Matx<_Tp, 3, 3>&, const cv::Point3_<_Tp>&)[m[K’
+ 1640 | Point3_<_Tp> [01;36m[Koperator[m[K * (const Matx<_Tp, 3, 3>& a, const Point3_<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1640:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, 3, 3>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1647:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Matx<T2, 4, 1> cv::operator*(const cv::Matx<_Tp, 4, 4>&, const cv::Point3_<_Tp>&)[m[K’
+ 1647 | Matx<_Tp, 4, 1> [01;36m[Koperator[m[K * (const Matx<_Tp, 4, 4>& a, const Point3_<_Tp>& b)
+      |                 [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1647:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, 4, 4>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1751:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Size_<_Tp> cv::operator*(const cv::Size_<_Tp>&, _Tp)[m[K’
+ 1751 | Size_<_Tp> [01;36m[Koperator[m[K * (const Size_<_Tp>& a, _Tp b)
+      |            [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1751:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Size_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2318:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Scalar_<_Tp> cv::operator*(const cv::Scalar_<_Tp>&, _Tp)[m[K’
+ 2318 | Scalar_<_Tp> [01;36m[Koperator[m[K * (const Scalar_<_Tp>& a, _Tp alpha)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2318:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Scalar_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2327:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Scalar_<_Tp> cv::operator*(_Tp, const cv::Scalar_<_Tp>&)[m[K’
+ 2327 | Scalar_<_Tp> [01;36m[Koperator[m[K * (_Tp alpha, const Scalar_<_Tp>& a)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2327:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Scalar_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2343:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Scalar_<_Tp> cv::operator*(const cv::Scalar_<_Tp>&, const cv::Scalar_<_Tp>&)[m[K’
+ 2343 | Scalar_<_Tp> [01;36m[Koperator[m[K * (const Scalar_<_Tp>& a, const Scalar_<_Tp>& b)
+      |              [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2343:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Scalar_<_Tp>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2409:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Scalar cv::operator*(const cv::Matx<_Tp, 4, 4>&, const Scalar&)[m[K’
+ 2409 | Scalar [01;36m[Koperator[m[K * (const Matx<_Tp, 4, 4>& a, const Scalar& b)
+      |        [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:2409:8:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, 4, 4>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:59[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3586:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(const cv::Mat&, const cv::Mat&)[m[K’
+ 3586 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (const Mat& a, const Mat& b);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3586:43:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+ 3586 | CV_EXPORTS MatExpr operator * ([01;36m[Kconst Mat& a[m[K, const Mat& b);
+      |                                [01;36m[K~~~~~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3587:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(const cv::Mat&, double)[m[K’
+ 3587 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (const Mat& a, double s);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3587:43:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+ 3587 | CV_EXPORTS MatExpr operator * ([01;36m[Kconst Mat& a[m[K, double s);
+      |                                [01;36m[K~~~~~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3588:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(double, const cv::Mat&)[m[K’
+ 3588 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (double s, const Mat& a);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3588:39:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kdouble[m[K’
+ 3588 | CV_EXPORTS MatExpr operator * ([01;36m[Kdouble s[m[K, const Mat& a);
+      |                                [01;36m[K~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3589:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(const cv::MatExpr&, const cv::Mat&)[m[K’
+ 3589 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (const MatExpr& e, const Mat& m);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3589:47:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst cv::MatExpr&[m[K’
+ 3589 | CV_EXPORTS MatExpr operator * ([01;36m[Kconst MatExpr& e[m[K, const Mat& m);
+      |                                [01;36m[K~~~~~~~~~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3590:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(const cv::Mat&, const cv::MatExpr&)[m[K’
+ 3590 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (const Mat& m, const MatExpr& e);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3590:43:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+ 3590 | CV_EXPORTS MatExpr operator * ([01;36m[Kconst Mat& m[m[K, const MatExpr& e);
+      |                                [01;36m[K~~~~~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3591:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(const cv::MatExpr&, double)[m[K’
+ 3591 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (const MatExpr& e, double s);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3591:47:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst cv::MatExpr&[m[K’
+ 3591 | CV_EXPORTS MatExpr operator * ([01;36m[Kconst MatExpr& e[m[K, double s);
+      |                                [01;36m[K~~~~~~~~~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3592:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(double, const cv::MatExpr&)[m[K’
+ 3592 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (double s, const MatExpr& e);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3592:39:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kdouble[m[K’
+ 3592 | CV_EXPORTS MatExpr operator * ([01;36m[Kdouble s[m[K, const MatExpr& e);
+      |                                [01;36m[K~~~~~~~^[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3593:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::MatExpr cv::operator*(const cv::MatExpr&, const cv::MatExpr&)[m[K’
+ 3593 | CV_EXPORTS MatExpr [01;36m[Koperator[m[K * (const MatExpr& e1, const MatExpr& e2);
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3593:47:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst cv::MatExpr&[m[K’
+ 3593 | CV_EXPORTS MatExpr operator * ([01;36m[Kconst MatExpr& e1[m[K, const MatExpr& e2);
+      |                                [01;36m[K~~~~~~~~~~~~~~~^~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3595:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::MatExpr cv::operator*(const cv::Mat&, const cv::Matx<_Tp, m, n>&)[m[K’
+ 3595 | MatExpr [01;36m[Koperator[m[K * (const Mat& a, const Matx<_Tp, m, n>& b) { return a * Mat(b); }
+      |         [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3595:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:59[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3597:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::MatExpr cv::operator*(const cv::Matx<_Tp, m, n>&, const cv::Mat&)[m[K’
+ 3597 | MatExpr [01;36m[Koperator[m[K * (const Matx<_Tp, m, n>& a, const Mat& b) { return Mat(a) * b; }
+      |         [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/mat.hpp:3597:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/calib3d.hpp:49[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:56[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:5[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:601:16:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> cv::Affine3<T> cv::operator*(const cv::Affine3<T>&, const cv::Affine3<T>&)[m[K’
+  601 | cv::Affine3<T> [01;36m[Kcv[m[K::operator*(const cv::Affine3<T>& affine1, const cv::Affine3<T>& affine2)
+      |                [01;36m[K^~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:601:16:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Affine3<T>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/calib3d.hpp:49[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:56[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:5[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:607:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T, class V> V cv::operator*(const cv::Affine3<T>&, const V&)[m[K’
+  607 | V [01;36m[Kcv[m[K::operator*(const cv::Affine3<T>& affine, const V& v)
+      |   [01;36m[K^~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:607:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst cv::Affine3<T>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/calib3d.hpp:49[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:56[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:5[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:619:11:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Vec3f cv::operator*(const Affine3f&, const Vec3f&)[m[K’
+  619 | cv::Vec3f [01;36m[Kcv[m[K::operator*(const cv::Affine3f& affine, const cv::Vec3f& v)
+      |           [01;36m[K^~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:619:45:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst Affine3f&[m[K’ {aka ‘[01m[Kconst cv::Affine3<float>&[m[K’}
+  619 | cv::Vec3f cv::operator*([01;36m[Kconst cv::Affine3f& affine[m[K, const cv::Vec3f& v)
+      |                         [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:630:11:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Vec3d cv::operator*(const Affine3d&, const Vec3d&)[m[K’
+  630 | cv::Vec3d [01;36m[Kcv[m[K::operator*(const cv::Affine3d& affine, const cv::Vec3d& v)
+      |           [01;36m[K^~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/affine.hpp:630:45:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} to ‘[01m[Kconst Affine3d&[m[K’ {aka ‘[01m[Kconst cv::Affine3<double>&[m[K’}
+  630 | cv::Vec3d cv::operator*([01;36m[Kconst cv::Affine3d& affine[m[K, const cv::Vec3d& v)
+      |                         [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:487[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:543:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MatrixDerived, class PermutationDerived> const Eigen::Product<MatrixDerived, PermutationDerived, 2> Eigen::operator*(const Eigen::MatrixBase<Derived>&, const Eigen::PermutationBase<PermutationDerived>&)[m[K’
+  543 | [01;36m[Koperator[m[K*(const MatrixBase<MatrixDerived> &matrix,
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:543:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst Eigen::PermutationBase<PermutationDerived>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:487[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:555:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class PermutationDerived, class MatrixDerived> const Eigen::Product<MatrixDerived, PermutationDerived, 2> Eigen::operator*(const Eigen::PermutationBase<PermutationDerived>&, const Eigen::MatrixBase<U>&)[m[K’
+  555 | [01;36m[Koperator[m[K*(const PermutationBase<PermutationDerived> &permutation,
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:555:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst Eigen::PermutationBase<PermutationDerived>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:488[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Transpositions.h:338:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MatrixDerived, class TranspositionsDerived> const Eigen::Product<MatrixDerived, PermutationDerived, 2> Eigen::operator*(const Eigen::MatrixBase<Derived>&, const Eigen::TranspositionsBase<TranspositionsDerived>&)[m[K’
+  338 | [01;36m[Koperator[m[K*(const MatrixBase<MatrixDerived> &matrix,
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Transpositions.h:338:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst Eigen::TranspositionsBase<TranspositionsDerived>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:488[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Transpositions.h:350:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class TranspositionsDerived, class MatrixDerived> const Eigen::Product<MatrixDerived, PermutationDerived, 2> Eigen::operator*(const Eigen::TranspositionsBase<TranspositionsDerived>&, const Eigen::MatrixBase<U>&)[m[K’
+  350 | [01;36m[Koperator[m[K*(const TranspositionsBase<TranspositionsDerived> &transpositions,
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Transpositions.h:350:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 3>[m[K’} is not derived from ‘[01m[Kconst Eigen::TranspositionsBase<TranspositionsDerived>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Householder:24[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/QR:17[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:4[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:10[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:438:99:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class OtherDerived, class VectorsType, class CoeffsType, int Side> typename Eigen::internal::matrix_type_times_scalar_type<typename VectorsType::Scalar, OtherDerived>::Type Eigen::operator*(const Eigen::MatrixBase<Derived>&, const Eigen::HouseholderSequence<VectorsType, CoeffsType, Side>&)[m[K’
+  438 | typename internal::matrix_type_times_scalar_type<typename VectorsType::Scalar,OtherDerived>::Type [01;36m[Koperator[m[K*(const MatrixBase<OtherDerived>& other, const HouseholderSequence<VectorsType,CoeffsType,Side>& h)
+      |                                                                                                   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:438:99:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst Eigen::HouseholderSequence<VectorsType, CoeffsType, Side>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Geometry:46[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:6[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:10[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Geometry/Scaling.h:117:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Derived, class Scalar> Eigen::CwiseBinaryOp<Eigen::internal::scalar_product_op<typename Eigen::internal::traits<T>::Scalar, Scalar>, const Derived, const typename Eigen::internal::plain_constant_type<Expr, Scalar>::type> Eigen::operator*(const Eigen::MatrixBase<Derived>&, const Eigen::UniformScaling<Scalar>&)[m[K’
+  117 | [01;36m[Koperator[m[K*(const MatrixBase<Derived>& matrix, const UniformScaling<Scalar>& s)
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Geometry/Scaling.h:117:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Mat[m[K’ is not derived from ‘[01m[Kconst Eigen::UniformScaling<Scalar>[m[K’
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:88[m[K,
+                 from [01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:9[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:29:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> typename Eigen::internal::enable_if<true, const Eigen::CwiseBinaryOp<Eigen::internal::scalar_product_op<typename Eigen::internal::promote_scalar_arg<double, T, Eigen::internal::has_ReturnType<Eigen::ScalarBinaryOpTraits<T, double, Eigen::internal::scalar_product_op<T, double> > >::value>::type, double>, const typename Eigen::internal::plain_constant_type<Eigen::Matrix<double, 3, 3>, typename Eigen::internal::promote_scalar_arg<double, T, Eigen::internal::has_ReturnType<Eigen::ScalarBinaryOpTraits<T, double, Eigen::internal::scalar_product_op<T, double> > >::value>::type>::type, const Eigen::Matrix<double, 3, 3> > >::type Eigen::operator*(const T&, const StorageBaseType&)[m[K’
+   50 | EIGEN_MAKE_SCALAR_BINARY_OP([01;36m[Koperator[m[K*,product)
+      |                             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/Macros.h:990:4:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP_ONTHELEFT[m[K’
+  990 |   ([01;36m[KMETHOD[m[K)(const T& scalar, const StorageBaseType& matrix) { \
+      |    [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K’
+   50 | [01;36m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K(operator*,product)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:29:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+   50 | EIGEN_MAKE_SCALAR_BINARY_OP([01;36m[Koperator[m[K*,product)
+      |                             [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/Macros.h:990:4:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP_ONTHELEFT[m[K’
+  990 |   ([01;36m[KMETHOD[m[K)(const T& scalar, const StorageBaseType& matrix) { \
+      |    [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.h:50:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K’
+   50 | [01;36m[KEIGEN_MAKE_SCALAR_BINARY_OP[m[K(operator*,product)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:224:27:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[KRobot_T[m[K’ (type ‘[01m[Kcv::Mat[m[K’) to type ‘[01m[Kconst StorageBaseType&[m[K’ {aka ‘[01m[Kconst Eigen::MatrixBase<Eigen::Matrix<double, 3, 3> >&[m[K’}
+  224 |  Robot_T = rotation_robot*[01;36m[KRobot_T[m[K;
+      |                           [01;36m[K^~~~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:231:50:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<double, 3, 3>[m[K’} has no member named ‘[01m[Kat[m[K’; did you mean ‘[01m[Kdata[m[K’?
+  231 |  Robot_R.at<double>(0, 3) =  -1 * rotation_robot.[01;31m[Kat[m[K<double>(0, 0);
+      |                                                  [01;31m[K^~[m[K
+      |                                                  [32m[Kdata[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:231:53:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  231 |  Robot_R.at<double>(0, 3) =  -1 * rotation_robot.at<[01;31m[Kdouble[m[K>(0, 0);
+      |                                                     [01;31m[K^~~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:232:50:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<double, 3, 3>[m[K’} has no member named ‘[01m[Kat[m[K’; did you mean ‘[01m[Kdata[m[K’?
+  232 |  Robot_R.at<double>(1, 3) =  -1 * rotation_robot.[01;31m[Kat[m[K<double>(1, 0);
+      |                                                  [01;31m[K^~[m[K
+      |                                                  [32m[Kdata[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:232:53:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  232 |  Robot_R.at<double>(1, 3) =  -1 * rotation_robot.at<[01;31m[Kdouble[m[K>(1, 0);
+      |                                                     [01;31m[K^~~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:233:50:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<double, 3, 3>[m[K’} has no member named ‘[01m[Kat[m[K’; did you mean ‘[01m[Kdata[m[K’?
+  233 |  Robot_R.at<double>(2, 3) =  -1 * rotation_robot.[01;31m[Kat[m[K<double>(2, 0);
+      |                                                  [01;31m[K^~[m[K
+      |                                                  [32m[Kdata[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:233:53:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  233 |  Robot_R.at<double>(2, 3) =  -1 * rotation_robot.at<[01;31m[Kdouble[m[K>(2, 0);
+      |                                                     [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/pointCloudCppCV.dir/build.make:63: CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1648: CMakeFiles/pointCloudCppCV.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
