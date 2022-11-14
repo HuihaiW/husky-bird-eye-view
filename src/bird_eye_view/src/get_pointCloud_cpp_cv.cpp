@@ -118,8 +118,8 @@ int main(int argc, char** argv){
     cv::Mat cv_location;
     cv::Mat cv_rgb;
     
-    Mat generated_image_high(400, 400, CV_8UC3, Scalar(0,0,0));
-    Mat height_high(400, 400, CV_64FC1, Scalar(0));
+    //Mat generated_image_high(400, 400, CV_8UC3, Scalar(0,0,0));
+    //Mat height_high(400, 400, CV_64FC1, Scalar(0));
 
     Mat mm2m;
     mm2m = Mat::zeros(3, 3, CV_64FC1);
@@ -214,7 +214,7 @@ int main(int argc, char** argv){
 	q.y() = r_y;
 	q.z() = r_z;
 	q.w() = r_w;
-	Matrix3d rotation_robot = q.normalized().toRotationMatrix().inverse();
+	Matrix3d rotation_robot = q.normalized().toRotationMatrix();
         Mat Robot_R(3, 4, CV_64FC1);
 
 	for(int i=0; i<3; i++){
@@ -222,9 +222,9 @@ int main(int argc, char** argv){
 		Robot_R.at<double>(i,j) = rotation_robot(i,j);
             }
 	}
-	Robot_R.at<double>(0, 3) = x;
-	Robot_R.at<double>(1, 3) = y;
-	Robot_R.at<double>(2, 3) = z;
+	Robot_R.at<double>(0, 3) =  x;
+	Robot_R.at<double>(1, 3) =  y;
+	Robot_R.at<double>(2, 3) =  z;
 
 	
 	cout << "Loop: " << index++ << endl;
@@ -309,11 +309,13 @@ int main(int argc, char** argv){
 	    
 
 	    
+            Mat generated_image_high(800, 800, CV_8UC3, Scalar(0,0,0));
+    	    Mat height_high(800, 800, CV_64FC1, Scalar(0));
 	    cout << "start get new image" << endl;
 	    for(size_t i=0; i<pointcount; i++){
 
-		double x = cv_location.at<double>(0, i)/0.05;
-		double y = cv_location.at<double>(1, i)/0.05;
+		double x = 400 + cv_location.at<double>(0, i)/0.05;
+		double y = 400 + 400 - cv_location.at<double>(1, i)/0.05;
 		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
@@ -321,10 +323,10 @@ int main(int argc, char** argv){
 		int b = cv_rgb.at<uchar>(2, i);
 		
 
-		if(x>400) continue;
-		if(x<0) continue;
-		if(y>400)continue;
-		if(y<0)continue;
+		if(x>800) continue;
+		if(x<-400) continue;
+		if(y>800)continue;
+		if(y<-400)continue;
 
 
 		//cout << "x and y is: " << x <<  ", " << y << endl; 
