@@ -129,7 +129,7 @@ int main(int argc, char** argv){
     mm2m = Mat::zeros(3, 4, CV_64FC1);
     mm2m.at<double>(0,0) = 0.001;
     mm2m.at<double>(1,1) = -0.001;
-    mm2m.at<double>(2,2) = -0.001;
+    mm2m.at<double>(2,2) = 0.001;
     mm2m.at<double>(1,3) = 0.37;
 
 
@@ -211,6 +211,9 @@ int main(int argc, char** argv){
 	    cv_Rotation.at<double>(i,j)=rotation_value;
 	}
     }
+    
+    ros::Rate loop_rate(1);
+
 
 
 
@@ -231,9 +234,9 @@ int main(int argc, char** argv){
 		Robot_R.at<double>(i,j) = rotation_robot(i,j);
             }
 	}
-	Robot_R.at<double>(0, 3) = -1 * Robot_T(0, 0);
-	Robot_R.at<double>(1, 3) = -1 * Robot_T(1, 0);
-	Robot_R.at<double>(2, 3) = -1 * Robot_T(2, 0);
+	Robot_R.at<double>(0, 3) = 1 * Robot_T(0, 0);
+	Robot_R.at<double>(1, 3) = 1 * Robot_T(1, 0);
+	Robot_R.at<double>(2, 3) = 1 * Robot_T(2, 0);
 
 	
 	cout << "Loop: " << index++ << endl;
@@ -330,7 +333,7 @@ int main(int argc, char** argv){
 	    for(size_t i=0; i<pointcount; i++){
 
 		double x = 400 + cv_location.at<double>(0, i)/0.05;
-		double y = 400 + cv_location.at<double>(1, i)/0.05;
+		double y = 400 - cv_location.at<double>(1, i)/0.05;
 		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
@@ -400,6 +403,7 @@ int main(int argc, char** argv){
 	    }
 	    //pointcloud.clear();
 	}
+	loop_rate.sleep();
 	ros::spinOnce();
     }
     cv::destroyAllWindows();
