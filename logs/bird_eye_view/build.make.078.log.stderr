@@ -1,0 +1,7 @@
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_pointCloud_cpp_cv.cpp:33:61:[m[K [01;31m[Kerror: [m[Kfound ‘[01m[K:[m[K’ in nested-name-specifier, expected ‘[01m[K::[m[K’
+   33 | void get_pose(const geometry_msgs::PoseWithCovarianceStamped[01;31m[K:[m[KConstPtr& msg){
+      |                                                             [01;31m[K^[m[K
+      |                                                             [32m[K::[m[K
+make[2]: *** [CMakeFiles/pointCloudCppCV.dir/build.make:63: CMakeFiles/pointCloudCppCV.dir/src/get_pointCloud_cpp_cv.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1648: CMakeFiles/pointCloudCppCV.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -14,40 +14,39 @@
 #include <stdlib.h>
 #include <vector>
 #include "ros/ros.h" 
-#include "tf2_msgs/TFMessage.h"
+#include "geometry_msgs/PoseWithCovarianceStamped.h"
+//#include "tf2_msgs/TFMessage.h"
 
 using namespace std;
 using namespace cv;
 using namespace Eigen;
 
-float x;
-float y;
-float z;
+float t_x;
+float t_y;
+float t_z;
 
 float r_x;
 float r_y;
 float r_z;
 float r_w;
 
-void get_pose(const tf2_msgs::TFMessage::ConstPtr& msg){
+void get_pose(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg){
 
-    string child_frame;
-    child_frame = msg->transforms[0].child_frame_id;
-    if(child_frame == "base_link"){
-        x = msg->transforms[0].transform.translation.x;
-        y = msg->transforms[0].transform.translation.y;
-        r_x = msg->transforms[0].transform.rotation.x;
-        r_y = msg->transforms[0].transform.rotation.y;
-        r_z = msg->transforms[0].transform.rotation.z;
-        r_w = msg->transforms[0].transform.rotation.w;
-    }
+        t_x = msg->pose.pose.position.x;
+        t_y = msg->pose.pose.position.y;
+        t_z = msg->pose.pose.position.z;
+
+        r_x = msg->pose.pose.orientation.x;
+        r_y = msg->pose.pose.orientation.y;
+        r_z = msg->pose.pose.orientation.z;
+        r_w = msg->pose.pose.orientation.w;
    
 }
 
 int main(int argc, char** argv){
     ros::init(argc, argv, "image");
     ros::NodeHandle n;
-    ros::Subscriber sub = n.subscribe("tf", 1, get_pose);
+    ros::Subscriber sub = n.subscribe("amcl_pose", 1, get_pose);
     const uint32_t device_count = k4a::device::get_installed_count();
     if(device_count == 0){
 	cout << "No k4a device attached!" << endl;
@@ -73,6 +72,7 @@ int main(int argc, char** argv){
     namedWindow("rgb", WINDOW_NORMAL);
     //namedWindow("generated_low", WINDOW_NORMAL);
     namedWindow("generated_high", WINDOW_NORMAL);
+    namedWindow("generated_high_temp", WINDOW_NORMAL);
     //namedWindow("resized_high", WINDOW_NORMAL);
 
 
@@ -223,7 +223,7 @@ int main(int argc, char** argv){
 	Matrix3d rotation_robot = q.normalized().toRotationMatrix();
         Mat Robot_R(3, 4, CV_64FC1);
 	Matrix<double, 3, 1> Robot_T;
-	Robot_T << x, y, z;
+	Robot_T << t_x, t_y, t_z;
 	//Robot_T = rotation_robot*Robot_T;
 
 	for(int i=0; i<3; i++){
@@ -231,15 +231,17 @@ int main(int argc, char** argv){
 		Robot_R.at<double>(i,j) = rotation_robot(i,j);
             }
 	}
-	Robot_R.at<double>(0, 3) =  -1 * Robot_T(0, 0);
-	Robot_R.at<double>(1, 3) =  -1 * Robot_T(1, 0);
-	Robot_R.at<double>(2, 3) =  -1 * Robot_T(2, 0);
+	Robot_R.at<double>(0, 3) = -1 * Robot_T(0, 0);
+	Robot_R.at<double>(1, 3) = -1 * Robot_T(1, 0);
+	Robot_R.at<double>(2, 3) = -1 * Robot_T(2, 0);
 
 	
 	cout << "Loop: " << index++ << endl;
 	cout << "robot rotation matrix is:" << rotation_robot << endl;
-	cout << "robot x: " << x <<  " ; " << endl; 
-	cout << "robot y: " << y <<  " ; " << endl; 
+	cout << "q.z = " << q.z() << endl;
+	cout << "q.w = " << q.w() << endl;
+	cout << "robot x: " << t_x <<  " ; " << endl; 
+	cout << "robot y: " << t_y <<  " ; " << endl; 
 	
 	start = clock();
 	if(device.get_capture(&capture)){
@@ -328,7 +330,7 @@ int main(int argc, char** argv){
 	    for(size_t i=0; i<pointcount; i++){
 
 		double x = 400 + cv_location.at<double>(0, i)/0.05;
-		double y = 800 - (400 + cv_location.at<double>(1, i)/0.05);
+		double y = 400 + cv_location.at<double>(1, i)/0.05;
 		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
@@ -337,9 +339,9 @@ int main(int argc, char** argv){
 		
 
 		if(x>800) continue;
-		if(x<-400) continue;
+		if(x<0) continue;
 		if(y>800)continue;
-		if(y<-400)continue;
+		if(y<0)continue;
 
 
 		//cout << "x and y is: " << x <<  ", " << y << endl; 
