@@ -127,10 +127,10 @@ int main(int argc, char** argv){
 
     Mat mm2m;
     mm2m = Mat::zeros(3, 4, CV_64FC1);
-    mm2m.at<double>(0,0) = 0.001;
-    mm2m.at<double>(1,1) = -0.001;
-    mm2m.at<double>(2,2) = 0.001;
-    mm2m.at<double>(1,3) = 0.37;
+    mm2m.at<double>(0,1) = -0.001;
+    mm2m.at<double>(1,0) = -0.001;
+    mm2m.at<double>(2,2) = -0.001;
+    mm2m.at<double>(0,3) = 0.37;
 
 
     start = clock();
@@ -159,12 +159,15 @@ int main(int argc, char** argv){
 
     Matrix3d Homography, intrinsic_rotate, temp_matrix, rotation_matrix;
     
-    Homography << 0.000139809, -0.000187151, 0.815971, -1.88624e-06, -3.60233e-05, 0.578092, -3.35392e-08, -2.5564e-07, 0.00120086;
+    //Homography << 0.000139809, -0.000187151, 0.815971, -1.88624e-06, -3.60233e-05, 0.578092, -3.35392e-08, -2.5564e-07, 0.00120086;
     //Homography << 0.000540608, -0.000543355, 0.736318, 1.08167e-05, -0.000132894, 0.676634, 2.55567e-08, -8.55258e-07, 0.00114261;
     //Homography <<  0.000530757, -0.000537706, 0.706097, 4.45295e-05, -0.000209662, 0.708113,  8.27766e-08, -8.7597e-07, 0.00119099;
 
     //Homography <<  0.000577036,-0.000556275,0.701894, 7.53814e-05,-0.000200309,0.71228, 1.11737e-07,-8.80059e-07,0.00108064;
     //Homography <<  0.000724782, -0.000644843, 0.705882, 7.69309e-05,-0.000192769, 0.708329, 1.23824e-07,-1.02981e-06, 0.00112925;
+
+    Homography << 0.00087138, -0.000819049, 0.716003, 7.13997e-05, -0.000203317, 0.698095, 9.45712e-08, -1.27232e-06, 0.00112625;
+
 
     intrinsic_rotate << 606.782, 0.0,  643.805,
 		     	0.0, 606.896,  366.084,
@@ -333,7 +336,7 @@ int main(int argc, char** argv){
 	    for(size_t i=0; i<pointcount; i++){
 
 		double x = 400 + cv_location.at<double>(0, i)/0.05;
-		double y = 400 - cv_location.at<double>(1, i)/0.05;
+		double y = 400 + cv_location.at<double>(1, i)/0.05;
 		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
