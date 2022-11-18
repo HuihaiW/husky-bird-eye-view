@@ -149,6 +149,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/bird_eye_view_node.cpp)
 add_executable(pointCloudCppCV ./src/get_pointCloud_cpp_cv.cpp)
+add_executable(transform ./src/get_transform.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -165,6 +166,7 @@ add_executable(pointCloudCppCV ./src/get_pointCloud_cpp_cv.cpp)
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(pointCloudCppCV k4a::k4a ${OpenCV_LIBS} ${catkin_LIBRARIES})
+target_link_libraries(transform ${catkin_LIBRARIES})
 
 #############
 ## Install ##

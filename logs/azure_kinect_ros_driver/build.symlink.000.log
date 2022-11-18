@@ -1,0 +1,5 @@
+Symlinking /home/uil/husky_catkin/devel/lib/libazure_kinect_ros_driver_nodelet.so
+Symlinking /home/uil/husky_catkin/devel/lib/azure_kinect_ros_driver/node
+Symlinking /home/uil/husky_catkin/devel/lib/pkgconfig/azure_kinect_ros_driver.pc
+Symlinking /home/uil/husky_catkin/devel/share/azure_kinect_ros_driver/cmake/azure_kinect_ros_driverConfig.cmake
+Symlinking /home/uil/husky_catkin/devel/share/azure_kinect_ros_driver/cmake/azure_kinect_ros_driverConfig-version.cmake

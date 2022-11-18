@@ -1,0 +1,16 @@
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_transform.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_transform.cpp:17:3:[m[K [01;31m[Kerror: [m[K‘[01m[Ktemp_matrix[m[K’ was not declared in this scope
+   17 |   [01;31m[Ktemp_matrix[m[K = intrinsic_rotate.inverse() * Homography;
+      |   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_transform.cpp:40:19:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Ktf2::Quaternion q[m[K’
+   40 |   tf2::Quaternion [01;31m[Kq[m[K;
+      |                   [01;31m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_transform.cpp:24:15:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[KEigen::Quaterniond q[m[K’
+   24 |   Quaterniond [01;36m[Kq[m[K(rotation_matrix);
+      |               [01;36m[K^[m[K
+[01m[K/home/uil/husky_catkin/src/bird_eye_view/src/get_transform.cpp:41:11:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::Quaterniond[m[K’ {aka ‘[01m[Kclass Eigen::Quaternion<double>[m[K’} has no member named ‘[01m[KsetRPY[m[K’
+   41 |         q.[01;31m[KsetRPY[m[K(0, 0, 0);
+      |           [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/transform.dir/build.make:63: CMakeFiles/transform.dir/src/get_transform.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1056: CMakeFiles/transform.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,16 @@
+[35m[1mScanning dependencies of target azure_kinect_ros_driver_node[0m
+[35m[1mScanning dependencies of target azure_kinect_ros_driver_nodelet[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_nodelet.dir/src/k4a_ros_bridge_nodelet.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_nodelet.dir/src/k4a_ros_device_params.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_nodelet.dir/src/k4a_ros_device.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_node.dir/src/k4a_ros_bridge_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_node.dir/src/k4a_calibration_transform_data.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_node.dir/src/k4a_ros_device_params.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_node.dir/src/k4a_ros_device.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/azure_kinect_ros_driver_nodelet.dir/src/k4a_calibration_transform_data.cpp.o[0m
+[ 90%] [32m[1mLinking CXX shared library /home/uil/husky_catkin/devel/.private/azure_kinect_ros_driver/lib/libazure_kinect_ros_driver_nodelet.so[0m
+[100%] [32m[1mLinking CXX executable /home/uil/husky_catkin/devel/.private/azure_kinect_ros_driver/lib/azure_kinect_ros_driver/node[0m
+[100%] Built target azure_kinect_ros_driver_nodelet
+/usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/noetic/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.406
+/usr/bin/ld: warning: libopencv_core.so.406, needed by /usr/local/lib/libopencv_imgcodecs.so.4.6.0, may conflict with libopencv_core.so.4.2
+[100%] Built target azure_kinect_ros_driver_node

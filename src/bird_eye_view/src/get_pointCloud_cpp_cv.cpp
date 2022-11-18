@@ -122,7 +122,7 @@ int main(int argc, char** argv){
     cv::Mat cv_location;
     cv::Mat cv_rgb;
     
-    Mat generated_image_high(800, 800, CV_8UC3, Scalar(0,0,0));
+    Mat generated_image_high(1600, 1600, CV_8UC3, Scalar(0,0,0));
     Mat height_high(800, 800, CV_64FC1, Scalar(0));
 
     Mat mm2m;
@@ -215,7 +215,7 @@ int main(int argc, char** argv){
 	}
     }
     
-    ros::Rate loop_rate(1);
+    ros::Rate loop_rate(0.2);
 
 
 
@@ -330,13 +330,13 @@ int main(int argc, char** argv){
 	    
 
 	    
-            Mat generated_image_high_temp(800, 800, CV_8UC3, Scalar(0,0,0));
+            Mat generated_image_high_temp(1600, 1600, CV_8UC3, Scalar(0,0,0));
     	    //Mat height_high(800, 800, CV_64FC1, Scalar(0));
 	    cout << "start get new image" << endl;
 	    for(size_t i=0; i<pointcount; i++){
 
-		double x = 400 + cv_location.at<double>(0, i)/0.05;
-		double y = 400 + cv_location.at<double>(1, i)/0.05;
+		double x = 400 + cv_location.at<double>(0, i)/0.01;
+		double y = 400 + cv_location.at<double>(1, i)/0.01;
 		double z = cv_location.at<double>(2, i);
 
 		int r = cv_rgb.at<uchar>(0, i);
@@ -344,9 +344,9 @@ int main(int argc, char** argv){
 		int b = cv_rgb.at<uchar>(2, i);
 		
 
-		if(x>800) continue;
+		if(x>1600) continue;
 		if(x<0) continue;
-		if(y>800)continue;
+		if(y>1600)continue;
 		if(y<0)continue;
 
 
