@@ -71,8 +71,8 @@ int main(int argc, char** argv){
     k4a::capture capture;
     namedWindow("rgb", WINDOW_NORMAL);
     //namedWindow("generated_low", WINDOW_NORMAL);
-    namedWindow("generated_high", WINDOW_NORMAL);
-    namedWindow("generated_high_temp", WINDOW_NORMAL);
+    namedWindow("generated_high", 0);
+    //namedWindow("generated_high_temp", WINDOW_NORMAL);
     //namedWindow("resized_high", WINDOW_NORMAL);
 
 
@@ -122,8 +122,8 @@ int main(int argc, char** argv){
     cv::Mat cv_location;
     cv::Mat cv_rgb;
     
-    Mat generated_image_high(1600, 1600, CV_8UC3, Scalar(0,0,0));
-    Mat height_high(800, 800, CV_64FC1, Scalar(0));
+    Mat generated_image_high(10000, 10000, CV_8UC3, Scalar(0,0,0));
+    Mat height_high(10000, 10000, CV_64FC1, Scalar(0));
 
     Mat mm2m;
     mm2m = Mat::zeros(3, 4, CV_64FC1);
@@ -166,8 +166,9 @@ int main(int argc, char** argv){
     //Homography <<  0.000577036,-0.000556275,0.701894, 7.53814e-05,-0.000200309,0.71228, 1.11737e-07,-8.80059e-07,0.00108064;
     //Homography <<  0.000724782, -0.000644843, 0.705882, 7.69309e-05,-0.000192769, 0.708329, 1.23824e-07,-1.02981e-06, 0.00112925;
 
-    Homography << 0.00087138, -0.000819049, 0.716003, 7.13997e-05, -0.000203317, 0.698095, 9.45712e-08, -1.27232e-06, 0.00112625;
+    //Homography << 0.00087138, -0.000819049, 0.716003, 7.13997e-05, -0.000203317, 0.698095, 9.45712e-08, -1.27232e-06, 0.00112625;
 
+    Homography << 0.00064778, -0.000652917, 0.789759, -1.74702e-05, -0.000140727, 0.613416, -4.88575e-08, -9.94986e-07, 0.00117732;
 
     intrinsic_rotate << 606.782, 0.0,  643.805,
 		     	0.0, 606.896,  366.084,
@@ -215,7 +216,7 @@ int main(int argc, char** argv){
 	}
     }
     
-    ros::Rate loop_rate(0.2);
+    ros::Rate loop_rate(1);
 
 
 
@@ -242,12 +243,14 @@ int main(int argc, char** argv){
 	Robot_R.at<double>(2, 3) = 1 * Robot_T(2, 0);
 
 	
+	/*	
 	cout << "Loop: " << index++ << endl;
 	cout << "robot rotation matrix is:" << rotation_robot << endl;
 	cout << "q.z = " << q.z() << endl;
 	cout << "q.w = " << q.w() << endl;
 	cout << "robot x: " << t_x <<  " ; " << endl; 
 	cout << "robot y: " << t_y <<  " ; " << endl; 
+	*/
 	
 	start = clock();
 	if(device.get_capture(&capture)){
@@ -330,23 +333,26 @@ int main(int argc, char** argv){
 	    
 
 	    
-            Mat generated_image_high_temp(1600, 1600, CV_8UC3, Scalar(0,0,0));
+            //Mat g/enerated_image_high_temp(10000, 10000, CV_8UC3, Scalar(0,0,0));
+
     	    //Mat height_high(800, 800, CV_64FC1, Scalar(0));
 	    cout << "start get new image" << endl;
 	    for(size_t i=0; i<pointcount; i++){
 
-		double x = 400 + cv_location.at<double>(0, i)/0.01;
-		double y = 400 + cv_location.at<double>(1, i)/0.01;
+		double x = 5000 - cv_location.at<double>(0, i)/0.01;
+		double y = 1000 + cv_location.at<double>(1, i)/0.01;
+		//double x = 400 + cv_location.at<double>(0, i)/0.01;
+		//double y = 10000 - cv_location.at<double>(1, i)/0.01;
 		double z = cv_location.at<double>(2, i);
-
+		
 		int r = cv_rgb.at<uchar>(0, i);
 		int g = cv_rgb.at<uchar>(1, i);
 		int b = cv_rgb.at<uchar>(2, i);
 		
 
-		if(x>1600) continue;
+		if(x>10000) continue;
 		if(x<0) continue;
-		if(y>1600)continue;
+		if(y>10000)continue;
 		if(y<0)continue;
 
 
@@ -372,11 +378,12 @@ int main(int argc, char** argv){
 		    generated_image_high.at<Vec3b>(i_y, i_x)[0] = r;
 		    generated_image_high.at<Vec3b>(i_y, i_x)[1] = g;
 		    generated_image_high.at<Vec3b>(i_y, i_x)[2] = b;
-		    height_high.at<double>(i_y, i_x) = z;
+		    //height_high.at<double>(i_y, i_x) = z;
 		    //mask.at<uchar>(i_y,i_x)=255;
-		    generated_image_high_temp.at<Vec3b>(i_y, i_x)[0] = r;
+		    /*generated_image_high_temp.at<Vec3b>(i_y, i_x)[0] = r;
 		    generated_image_high_temp.at<Vec3b>(i_y, i_x)[1] = g;
 		    generated_image_high_temp.at<Vec3b>(i_y, i_x)[2] = b;
+		    */
 
 
 	    }
@@ -390,8 +397,9 @@ int main(int argc, char** argv){
 	    //imshow("resized_high", resized_image_high);
 
 	    cout << "finished the first image" << endl;
+	    resizeWindow("generated_high", 1920, 1200);
 	    imshow("generated_high", generated_image_high);
-	    imshow("generated_high_temp", generated_image_high_temp);
+	    //imshow("generated_high_temp", generated_image_high_temp);
 
 
 	    capture.reset();
@@ -409,6 +417,7 @@ int main(int argc, char** argv){
 	loop_rate.sleep();
 	ros::spinOnce();
     }
+    imwrite("//home//uil//husky_catkin//generated_map.png", generated_image_high);
     cv::destroyAllWindows();
     
     rgbImage.reset();
